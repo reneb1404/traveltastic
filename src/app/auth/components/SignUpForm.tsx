@@ -40,6 +40,7 @@ export default function SignUpForm() {
 									id="password"
 									name="password"
 									type="password"
+									minLength={8}
 									placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
 									required
 								/>
@@ -50,6 +51,7 @@ export default function SignUpForm() {
 									id="confirmPassword"
 									name="confirmPassword"
 									type="password"
+									minLength={8}
 									placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
 									required
 								/>

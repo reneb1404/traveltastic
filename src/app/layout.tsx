@@ -1,3 +1,4 @@
+import { NavBar } from "@/components/NavBar/NavBar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -28,7 +29,10 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{children}
+				<div className="selection:bg-[hsl(88,100%,50%,40%)]">
+					<NavBar />
+					{children}
+				</div>
 			</body>
 		</html>
 	);
