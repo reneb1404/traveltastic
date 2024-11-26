@@ -1,3 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
-	return null;
+	return (
+		<form action="/auth/signout" method="post">
+			<Button type="submit">Sign out</Button>
+		</form>
+	);
 }
