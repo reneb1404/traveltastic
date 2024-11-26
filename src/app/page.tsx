@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { subscriptionTiersInOrder } from "@/data/subscriptionTiers";
 import { cn } from "@/lib/utils";
-import { ArrowRight, CheckIcon, ListCheck } from "lucide-react";
+import { ArrowRight, CheckIcon } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 
