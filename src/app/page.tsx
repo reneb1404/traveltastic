@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -39,6 +40,22 @@ export default function HomePage() {
 					))}
 				</div>
 			</section>
+			<footer className="container pt-16 pb-8 flex sm:flex-col gap-8 sm:gap-4 justify-between items-start">
+				<Link href="/">
+					<BrandLogo />
+				</Link>
+				<div className="flex flex-col sm:flex-row gap-8">
+					<div className="flex flex-col gap-8">
+						<FooteLinkGroup
+							title="Help"
+							links={[
+								{ label: "Title 1", href: "/title1" },
+								{ label: "Title 2", href: "/title2" },
+							]}
+						/>
+					</div>
+				</div>
+			</footer>
 		</>
 	);
 }
@@ -47,11 +64,13 @@ function PricingCard({
 	name,
 	priceInCents,
 	maxNumberOfItineraries,
-	canAccessBasicTools,
-	canAccessCollabPlanning,
+	hasBasicPlanningTools,
+	hasTravelTipsAndGuides,
 	hasAds,
-	hasAIFeatures,
+	canCollaborate,
 	hasOfflineAccess,
+	hasAIFeatures,
+	hasRewardsProgram,
 }: (typeof subscriptionTiersInOrder)[number]) {
 	const isMostPopular = name === "Premium";
 	return (
@@ -75,22 +94,21 @@ function PricingCard({
 				</Button>
 			</CardContent>
 			<CardFooter className="flex flex-col gap-4 items-start">
-				{canAccessBasicTools && <Feature>Basic travel planning tools</Feature>}
-				{canAccessCollabPlanning && (
+				{hasBasicPlanningTools && (
+					<Feature>Basic travel planning tools</Feature>
+				)}
+				{hasTravelTipsAndGuides && (
+					<Feature>General travel tips and guides</Feature>
+				)}
+				{canCollaborate && (
 					<Feature>Collaborative planning for group trips</Feature>
 				)}
 				{hasOfflineAccess && (
 					<Feature>Offline access to plans and notes</Feature>
 				)}
-				{canAccessBasicTools && <Feature>Basic travel planning tools</Feature>}
+				{hasRewardsProgram && <Feature>Rewards program</Feature>}
 				{hasAIFeatures && <Feature>AI-powered itinerary suggestions</Feature>}
 				{hasAds && <Feature>Ads included</Feature>}
-				<Feature>
-					View all Features under{" "}
-					<Link className="font-semibold" href="/#features">
-						Features
-					</Link>
-				</Feature>
 			</CardFooter>
 		</Card>
 	);
@@ -105,12 +123,23 @@ function Feature({ children }: { children: ReactNode; className?: string }) {
 	);
 }
 
-/**
- * <span className="flex items-center gap-2">
-					<ListCheck className="size-4" />
-					View all Features under{" "}
-					<Link className="font-semibold" href="/#features">
-						Features
-					</Link>
-				</span>
- */
+function FooteLinkGroup({
+	title,
+	links,
+}: {
+	title: string;
+	links: { label: string; href: string }[];
+}) {
+	return (
+		<div className="flex flex-col gap-4">
+			<h3 className="font-semibold">{title}</h3>
+			<ul className="flex flex-col gap-2 text-sm">
+				{links.map((link) => (
+					<li key={link.href}>
+						<Link href={link.href}>{link.label}</Link>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
+}

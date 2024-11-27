@@ -1,4 +1,5 @@
 import { NavBar } from "@/components/NavBar/NavBar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -25,14 +26,21 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<div className="selection:bg-[hsl(88,100%,50%,40%)]">
-					<NavBar />
-					{children}
-				</div>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<div className="selection:bg-[hsl(88,100%,50%,40%)]">
+						<NavBar />
+						{children}
+					</div>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
