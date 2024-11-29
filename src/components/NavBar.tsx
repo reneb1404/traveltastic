@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { BrandLogo } from "./BrandLogo";
+import { ToggleTheme } from "./theme/ToggleTheme";
 import { Button } from "./ui/button";
 
 export async function NavBar() {
@@ -42,6 +43,7 @@ export async function NavBar() {
 						</Link>
 					</span>
 				)}
+				<ToggleTheme />
 			</nav>
 		</header>
 	);
