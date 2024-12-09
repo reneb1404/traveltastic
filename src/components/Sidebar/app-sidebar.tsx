@@ -31,66 +31,37 @@ const data = {
 	},
 	navMain: [
 		{
-			title: "Features",
+			title: "Product",
 			url: "#features",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [
 				{
-					title: "History",
-					url: "#",
+					title: "Plan",
 				},
 				{
-					title: "Starred",
-					url: "#",
+					title: "Itinerary planner",
+					url: "itinerary-planner",
 				},
 				{
-					title: "Settings",
-					url: "#",
+					title: "Budget planner",
+					url: "budget-planner",
+				},
+				{
+					title: "Packing list",
+					url: "packing-list",
 				},
 			],
 		},
 		{
-			title: "Pricing",
+			title: "Features",
 			url: "#",
 			icon: Banknote,
-			items: [
-				{
-					title: "Genesis",
-					url: "#",
-				},
-				{
-					title: "Explorer",
-					url: "#",
-				},
-				{
-					title: "Quantum",
-					url: "#",
-				},
-			],
 		},
 		{
-			title: "About",
+			title: "Blog",
 			url: "#",
 			icon: CircleUserRound,
-			items: [
-				{
-					title: "Introduction",
-					url: "#",
-				},
-				{
-					title: "Get Started",
-					url: "#",
-				},
-				{
-					title: "Tutorials",
-					url: "#",
-				},
-				{
-					title: "Changelog",
-					url: "#",
-				},
-			],
 		},
 	],
 	favorites: [
