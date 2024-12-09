@@ -31,11 +31,10 @@ export async function login(formData: FormData) {
 	}
 
 	revalidatePath("/", "layout");
-	//Redirect to your desired page
-	redirect("/");
+	redirect("/dashboard");
 }
 
-export async function singup(formData: FormData) {
+export async function signup(formData: FormData) {
 	const supabase = createClient();
 
 	const data = {
@@ -59,11 +58,10 @@ export async function singup(formData: FormData) {
 	if (error) redirect("/error");
 
 	revalidatePath("/", "layout");
-	// Don't perform auto login, redirect to Login page
-	redirect("/auth/login");
+	redirect("/auth/login?success=1");
 }
 
-export async function GoogleSignIn() {
+export async function SignInWithGoogle() {
 	const supabase = createClient();
 
 	const { data, error } = await supabase.auth.signInWithOAuth({

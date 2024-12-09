@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { singup } from "../authAction";
+import { signup } from "../authActions";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 
 export function SignupForm() {
@@ -58,7 +58,7 @@ export function SignupForm() {
 									required
 								/>
 							</div>
-							<Button formAction={singup} type="submit" className="w-full">
+							<Button formAction={signup} type="submit" className="w-full">
 								Sign up
 							</Button>
 						</div>

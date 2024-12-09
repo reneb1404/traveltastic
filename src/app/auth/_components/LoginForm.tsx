@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { login } from "../authAction";
+import { login } from "../authActions";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 
 export default function LoginForm() {
